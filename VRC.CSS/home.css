@@ -1,15 +1,15 @@
-/* ------------------------------
+/* ==========================================================
    Reset
------------------------------- */
+========================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ------------------------------
-   Base
------------------------------- */
+/* ==========================================================
+   Base Style
+========================================================== */
 body {
   font-family: "Segoe UI", sans-serif;
   line-height: 1.7;
@@ -18,7 +18,8 @@ body {
   color: #333;
 }
 
-header, footer {
+header,
+footer {
   text-align: center;
   margin-bottom: 25px;
 }
@@ -29,32 +30,36 @@ h1 {
 }
 
 h2 {
-  margin-bottom: 12px;
-  border-left: 5px solid #0078ff;
-  padding-left: 10px;
   font-size: 1.3rem;
+  margin-bottom: 12px;
+  padding-left: 10px;
+  border-left: 5px solid #0078ff;
 }
 
-/* ------------------------------
+/* ==========================================================
    Card Layout
------------------------------- */
+========================================================== */
 section {
   background: #fff;
   padding: 18px;
   margin-bottom: 22px;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-/* ------------------------------
-   Icon Area
------------------------------- */
+/* ==========================================================
+   Icon Area（中央揃え）
+========================================================== */
+.icon-area {
+  text-align: center;
+}
+
 .icon-area img {
   width: 130px;
   height: 130px;
-  border-radius: 50%;
   display: block;
-  margin: 0 auto 12px;
+  margin: 0 auto 12px auto;
+  border-radius: 50%;
   object-fit: cover;
 }
 
@@ -67,9 +72,9 @@ section {
   text-decoration: underline;
 }
 
-/* ------------------------------
+/* ==========================================================
    Lists
------------------------------- */
+========================================================== */
 ul {
   list-style: none;
   padding-left: 0;
@@ -84,17 +89,62 @@ ul li:last-child {
   border-bottom: none;
 }
 
-/* ------------------------------
+/* ==========================================================
+   Profile Section（プロフィール横並び）
+========================================================== */
+.profile-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.profile-list {
+  flex: 1;
+}
+
+.avatar-image img {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  display: block;
+  margin-left: 0; 
+}
+
+.avatar-image img {
+  width: 180px;        
+  height: 320px;       
+  object-fit: cover;   
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  display: block;
+  margin-left: 0;
+}
+
+/* ==========================================================
+   Friend Icons
+========================================================== */
+.friend-icon {
+  width: 80px;
+  height: 80px;
+  margin-top: 6px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================
    Footer
------------------------------- */
+========================================================== */
 footer p {
   font-size: 0.9rem;
   color: #666;
 }
 
-/* ------------------------------
+/* ==========================================================
    Responsive
------------------------------- */
+========================================================== */
 @media (max-width: 600px) {
   body {
     padding: 12px;
@@ -106,5 +156,15 @@ footer p {
 
   section {
     padding: 15px;
+  }
+
+  /* プロフィールを縦並びに */
+  .profile-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avatar-image img {
+    width: 150px;
   }
 }

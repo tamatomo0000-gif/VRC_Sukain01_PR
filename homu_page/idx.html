@@ -6,43 +6,6 @@
   <!--CSS-->
   <link rel="stylesheet" href="../VRC.CSS/home.css">
 
-  <!-- CSSリセット -->
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: sans-serif;
-      line-height: 1.6;
-      padding: 20px;
-      background: #f5f5f5;
-    }
-    header, footer {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .icon-area, .profile, .friends, .groups, .games {
-      background: #fff;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-    }
-    .icon-area img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      display: block;
-      margin: 0 auto 10px;
-    }
-    h2 {
-      margin-bottom: 10px;
-      border-left: 5px solid #0078ff;
-      padding-left: 8px;
-    }
-  </style>
-
   <!-- リンクタイトル -->
   <title>Sukain01/ゲームプロフィール</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,8 +20,8 @@
 
   <!-- アイコン -->
   <section class="icon-area">
-    <img src="VRC_icon.png" alt="Sukain01">
-    
+    <img src="../img/VRC_icon.png" alt="Sukain01">
+
     <!-- アイコンリンク -->
     <p><a href="https://vrchat.com/home/user/usr_xxxxx">VRChatプロフィールへ</a></p>
 
@@ -72,24 +35,50 @@
   </main>
 
   <!-- プロフィール -->
-  <section class="profile">
-    <h2>プロフィール</h2>
-    <ul>
-      <li>性別：???</li>
-      <li>活動時間：???</li>
-      <li>好きなワールド：???</li>
-      <li>よく使うアバター：???</li>
+<section class="profile">
+  <h2>プロフィール</h2>
+
+  <div class="profile-wrapper">
+    <!-- 左：プロフィール項目 -->
+    <ul class="profile-list">
+      <li>性別：<p>???</p></li>
+      <li>活動時間：<p>???</p></li>
+      <li>好きなワールド：<p>???</p></li>
+      <li>よく使うアバター：<p>???</p></li>
+      <li>VRCでやっていること：<p>???</p></li>
     </ul>
-  </section>
+
+    <!-- 右：アバター写真 -->
+    <div class="avatar-image">
+      <img src="../img/VRC_icon.png" alt="アバター画像">
+    </div>
+  </div>
+</section>
 
   <!-- フレンド -->
   <section class="friends">
     <h2>フレンド</h2>
     <p>仲の良いフレンド一覧：</p>
     <ul>
-      <li>Friend_01</li>
-      <li>Friend_02</li>
-      <li>Friend_03</li>
+
+      <!-- Friend_01 -->
+      <li>
+        <p>Friend_01</p>
+        <img src="../img/friend01.png" alt="Friend_01の写真" class="friend-icon">
+      </li>
+
+      <!-- Friend_02 -->
+      <li>
+        <p>Friend_02</p>
+        <img src="../img/friend02.png" alt="Friend_02の写真" class="friend-icon">
+      </li>
+
+      <!-- Friend_03 -->
+      <li>
+        <p>Friend_03</p>
+        <img src="../img/friend03.png" alt="Friend_03の写真" class="friend-icon">
+      </li>
+
     </ul>
   </section>
 
@@ -97,8 +86,19 @@
   <section class="groups">
     <h2>所属グループ</h2>
     <ul>
-      <li>Group_A</li>
-      <li>Group_B</li>
+
+      <!-- Group_A -->
+      <li>
+        <p>Group_A</p>
+        <a href="https://twitter.com/xxxxx" target="_blank">Twitterリンク</a>
+      </li>
+
+      <!-- Group_B -->
+      <li>
+        <p>Group_B</p>
+        <a href="https://twitter.com/yyyyy" target="_blank">Twitterリンク</a>
+      </li>
+
     </ul>
   </section>
 
@@ -114,7 +114,7 @@
 
   <!-- 更新 -->
   <footer>
-    <p>&copy; 2026/02/02</p>
+    <p>&copy; 2026/02/04</p>
   </footer>
 
 </body>
