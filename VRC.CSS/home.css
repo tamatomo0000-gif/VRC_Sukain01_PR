@@ -45,16 +45,6 @@
   animation: fadeIn 1s ease;
 }
 
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
 /* ==========================================================
    Reset
 ========================================================== */
@@ -251,48 +241,37 @@ footer p {
 }
 
 /* ==========================================================
-   Responsive
+   Timeline (Schedule)
 ========================================================== */
-@media (max-width: 600px) {
-  body {
-    padding: 12px;
-  }
+.timeline {
+  border-left: 3px solid #6cf;
+  padding-left: 20px;
+  margin-left: 10px;
+}
 
-  h1 {
-    font-size: 1.6rem;
-  }
+.timeline-item {
+  margin-bottom: 20px;
+  position: relative;
+}
 
-  section {
-    padding: 15px;
-  }
-
-  /* プロフィールを縦並びに */
-  .profile-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .avatar-image img {
-    width: 150px;
-    height: 260px;
-  }
-
-  /* 写真カードを2列に */
-  .photo-card {
-    width: calc(50% - 10px);
-  }
+.timeline-item::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: #6cf;
+  border-radius: 50%;
+  position: absolute;
+  left: -27px;
+  top: 4px;
 }
 
 /* ==========================================================
    JS用追加スタイル
 ========================================================== */
-
-/* スケジュール折りたたみ */
 .schedule-table.hidden {
   display: none;
 }
 
-/* フェードイン */
 .hobby-card,
 .photo-card {
   opacity: 0;
@@ -306,7 +285,6 @@ footer p {
   transform: translateY(0);
 }
 
-/* 上へ戻るボタン */
 .back-to-top {
   position: fixed;
   right: 20px;
@@ -329,7 +307,6 @@ footer p {
   pointer-events: auto;
 }
 
-/* ヘッダー縮小 */
 header {
   transition: 0.3s ease;
 }
@@ -337,4 +314,49 @@ header {
 header.small {
   transform: scale(0.95);
   opacity: 0.9;
+}
+
+/* ==========================================================
+   Responsive
+========================================================== */
+@media (max-width: 600px) {
+  body {
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  .profile-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avatar-image img {
+    width: 150px;
+    height: 260px;
+  }
+
+  .photo-card {
+    width: calc(50% - 10px);
+  }
+}
+
+/* ==========================================================
+   Animations
+========================================================== */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
