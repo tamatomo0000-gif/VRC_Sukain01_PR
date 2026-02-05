@@ -3,119 +3,227 @@
 <head>
   <meta charset="UTF-8">
 
-  <!--CSS-->
+  <!-- CSS -->
   <link rel="stylesheet" href="VRC.CSS/home.css">
-  
 
-  <!-- リンクタイトル -->
-  <title>Sukain01/ゲームプロフィール</title>
+  <!-- タイトル -->
+  <title>Sukain01 / ゲームプロフィール</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
-  <!-- タイトル -->
+  <!-- ヘッダー -->
   <header>
     <h1>VRC_Sukain01</h1>
   </header>
 
-  <!-- アイコン -->
-  <section class="icon-area">
-    <img src="img/VRC_icon.png" alt="Sukain01">
-
-    <!-- アイコンリンク -->
-    <p><a href="https://vrchat.com/home/user/usr_xxxxx">VRChatプロフィールへ</a></p>
-
-    <!-- アイコン名 -->
-    <p>ユーザー名：Sukain01</p>
-  </section>
-
-  <!-- txt -->
   <main>
-    <p>VRC自己プロフィールページ</p>
+
+    <!-- アイコンエリア -->
+    <section class="icon-area">
+      <img src="img/VRC_icon.png" alt="Sukain01 のアイコン画像">
+
+      <p>
+        <a href="https://vrchat.com/home/user/usr_xxxxx"
+           target="_blank" rel="noopener noreferrer">
+          VRChatプロフィールへ
+        </a>
+      </p>
+
+      <p>ユーザー名：Sukain01</p>
+    </section>
+
+    <!-- 説明 -->
+    <section class="intro">
+      <p>VRC自己プロフィールページ</p>
+    </section>
+
+    <!-- プロフィール -->
+    <section class="profile">
+      <h2>プロフィール</h2>
+
+      <div class="profile-wrapper">
+
+        <!-- 左：プロフィール項目 -->
+        <dl class="profile-list">
+
+          <div>
+            <dt>性別</dt>
+            <dd>ふにゃオス：メス堕ち</dd>
+          </div>
+
+          <div>
+            <dt>趣味</dt>
+            <dd>サバゲー・海外旅行・電気工作・イラスト・プログラミング</dd>
+          </div>
+
+          <div>
+            <dt>VRC活動時間</dt>
+            <dd>19:00〜23:00</dd>
+          </div>
+
+          <div>
+            <dt>好きなワールド</dt>
+            <dd>チルワールドが大好き</dd>
+          </div>
+
+          <div>
+            <dt>よく使うアバター</dt>
+            <dd>Shinano</dd>
+          </div>
+
+          <div>
+            <dt>VRCでやっていること</dt>
+            <dd>友達と会話・イベント参加</dd>
+          </div>
+
+        </dl>
+
+        <!-- 右：アバター画像 -->
+        <div class="avatar-image">
+          <img src="homu_page/avatar.png" alt="Sukain01 のアバター画像">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 趣味の写真 -->
+    <section class="hobby-photos">
+      <h2>趣味の写真</h2>
+
+      <div class="hobby-wrapper">
+
+        <div class="hobby-card">
+          <img src="hobby/survival.jpg" alt="サバゲー写真">
+          <p>サバゲー</p>
+        </div>
+
+        <div class="hobby-card">
+          <img src="hobby/travel.jpg" alt="海外旅行の写真">
+          <p>海外旅行</p>
+        </div>
+
+        <div class="hobby-card">
+          <img src="hobby/electronics.jpg" alt="電気工作の写真">
+          <p>電気工作</p>
+        </div>
+
+        <div class="hobby-card">
+          <img src="hobby/illustration.jpg" alt="イラスト制作の写真">
+          <p>イラスト</p>
+        </div>
+
+        <div class="hobby-card">
+          <img src="hobby/programming.jpg" alt="プログラミングの写真">
+          <p>プログラミング</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VRCはじめてからのスケジュール表 -->
+    <section class="vrc-schedule">
+      <h2>VRCはじめてからのスケジュール</h2>
+
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>日付</th>
+            <th>出来事</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr><td>2025/06/04</td><td>VRChatを開始！</td></tr>
+          <tr><td>2025/06/07</td><td>Meta Quest 3S を購入</td></tr>
+          <tr><td>2025/06/19</td><td>Shinano 購入！</td></tr>
+          <tr><td>2025/06/19</td><td>メス堕ち（笑）</td></tr>
+          <tr><td>2025/06/--</td><td>まめひなた購入</td></tr>
+          <tr><td>2025/08/19</td><td>ルルネ購入</td></tr>
+          <tr><td>2025/09/26</td><td>PCVRが使用可能（調整中）</td></tr>
+          <tr><td>2025/11/10</td><td>ふにゃ堕ち</td></tr>
+          <tr><td>2025/11/29</td><td>海外〜資格試験でVRC禁止</td></tr>
+          <tr><td>2026/01/14</td><td>VRC復帰</td></tr>
+          <tr><td>2026/01/16</td><td>重度のふにゃ堕ち</td></tr>
+
+        </tbody>
+      </table>
+    </section>
+
+    <!-- VRCフォトギャラリー -->
+    <section class="photo-list">
+      <h2>VRCフォトギャラリー</h2>
+
+      <div class="photo-wrapper">
+
+        <div class="photo-card">
+          <img src="photos/photo1.png" alt="VRC写真1：お気に入りの瞬間①">
+          <p>お気に入りの瞬間①</p>
+        </div>
+
+        <div class="photo-card">
+          <img src="photos/photo2.png" alt="VRC写真2：お気に入りの瞬間②">
+          <p>お気に入りの瞬間②</p>
+        </div>
+
+        <div class="photo-card">
+          <img src="photos/photo3.png" alt="VRC写真3：お気に入りの瞬間③">
+          <p>お気に入りの瞬間③</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 所属グループ -->
+    <section class="groups">
+      <h2>所属グループ</h2>
+
+      <ul>
+        <li>
+          <p>Group_A</p>
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitterリンク</a>
+        </li>
+
+        <li>
+          <p>Group_B</p>
+          <a href="https://twitter.com/yyyyy" target="_blank" rel="noopener noreferrer">Twitterリンク</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- フレンドリスト -->
+    <section class="friends">
+      <h2>フレンドリストはこちら</h2>
+      <a class="btn-link" href="./homu_page/friend.html" target="_blank" rel="noopener noreferrer">
+        フレンド一覧へ
+      </a>
+    </section>
+
+    <!-- BOOTH 欲しい物リスト -->
+    <section class="booth">
+      <h2>BOOTH 欲しい物リストはこちら</h2>
+      <a class="btn-link" href="./homu_page/BOOTH.html" target="_blank" rel="noopener noreferrer">
+        欲しいものリスト
+      </a>
+    </section>
+
+    <!-- プレイ中のゲーム -->
+    <section class="games">
+      <h2>プレイ中のゲーム</h2>
+      <ul>
+        <li>VRChat</li>
+        <li>APEX Legends</li>
+        <li>Minecraft</li>
+      </ul>
+    </section>
+
   </main>
 
-  <!-- プロフィール -->
-<section class="profile">
-  <h2>プロフィール</h2>
-
-  <div class="profile-wrapper">
-    <!-- 左：プロフィール項目 -->
-    <ul class="profile-list">
-      <li>性別：<p>???</p></li>
-      <li>活動時間：<p>???</p></li>
-      <li>好きなワールド：<p>???</p></li>
-      <li>よく使うアバター：<p>???</p></li>
-      <li>VRCでやっていること：<p>???</p></li>
-    </ul>
-
-    <!-- 右：アバター写真 -->
-    <div class="avatar-image">
-      <img src="homu_page/avatar.png" alt="アバター画像">
-    </div>
-  </div>
-</section>
-
-  <!-- フレンド -->
-  <section class="friends">
-    <h2>フレンド</h2>
-    <p>仲の良いフレンド一覧：</p>
-    <ul>
-
-      <!-- Friend_01 -->
-      <li>
-        <p>Friend_01</p>
-        <img src="img/friend01.png" alt="Friend_01の写真" class="friend-icon">
-      </li>
-
-      <!-- Friend_02 -->
-      <li>
-        <p>Friend_02</p>
-        <img src="img/friend02.png" alt="Friend_02の写真" class="friend-icon">
-      </li>
-
-      <!-- Friend_03 -->
-      <li>
-        <p>Friend_03</p>
-        <img src="img/friend03.png" alt="Friend_03の写真" class="friend-icon">
-      </li>
-
-    </ul>
-  </section>
-
-  <!-- 所属グループ -->
-  <section class="groups">
-    <h2>所属グループ</h2>
-    <ul>
-
-      <!-- Group_A -->
-      <li>
-        <p>Group_A</p>
-        <a href="https://twitter.com/xxxxx" target="_blank">Twitterリンク</a>
-      </li>
-
-      <!-- Group_B -->
-      <li>
-        <p>Group_B</p>
-        <a href="https://twitter.com/yyyyy" target="_blank">Twitterリンク</a>
-      </li>
-
-    </ul>
-  </section>
-
-  <!-- ゲーム -->
-  <section class="games">
-    <h2>プレイ中のゲーム</h2>
-    <ul>
-      <li>VRChat</li>
-      <li>APEX Legends</li>
-      <li>Minecraft</li>
-    </ul>
-  </section>
-
-  <!-- 更新 -->
+  <!-- フッター -->
   <footer>
-    <p>&copy; 2026/02/04</p>
+    <p>&copy; <time datetime="2026-02-05">2026/02/05</time></p>
   </footer>
 
 </body>

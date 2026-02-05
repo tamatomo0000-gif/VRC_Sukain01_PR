@@ -48,7 +48,7 @@ section {
 }
 
 /* ==========================================================
-   Icon Area（中央揃え）
+   Icon Area
 ========================================================== */
 .icon-area {
   text-align: center;
@@ -73,23 +73,6 @@ section {
 }
 
 /* ==========================================================
-   Lists
-========================================================== */
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul li {
-  padding: 6px 0;
-  border-bottom: 1px solid #e0e0e0;
-}
-
-ul li:last-child {
-  border-bottom: none;
-}
-
-/* ==========================================================
    Profile Section（プロフィール横並び）
 ========================================================== */
 .profile-wrapper {
@@ -103,23 +86,63 @@ ul li:last-child {
   flex: 1;
 }
 
-.avatar-image img {
-  width: 180px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  display: block;
-  margin-left: 0; 
+.profile-list div {
+  display: flex;
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
+.profile-list div:last-child {
+  border-bottom: none;
+}
+
+.profile-list dt {
+  width: 130px;
+  font-weight: bold;
+  color: #444;
+}
+
+.profile-list dd {
+  flex: 1;
+  color: #555;
+}
+
+/* ==========================================================
+   Avatar Image
+========================================================== */
 .avatar-image img {
-  width: 180px;        
-  height: 320px;       
-  object-fit: cover;   
+  width: 180px;
+  height: 320px;
+  object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   display: block;
-  margin-left: 0;
+}
+
+/* ==========================================================
+   Photo Gallery
+========================================================== */
+.photo-wrapper {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.photo-card {
+  width: calc(33.3% - 10px);
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.photo-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
 }
 
 /* ==========================================================
@@ -132,6 +155,34 @@ ul li:last-child {
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================
+   Button Link Style
+========================================================== */
+.btn-link {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 14px 0;
+  margin: 12px 0;
+  background: #4a90e2;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn-link:hover {
+  background: #357ABD;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+.btn-link:active {
+  transform: scale(0.97);
 }
 
 /* ==========================================================
@@ -166,5 +217,11 @@ footer p {
 
   .avatar-image img {
     width: 150px;
+    height: 260px;
+  }
+
+  /* 写真カードを2列に */
+  .photo-card {
+    width: calc(50% - 10px);
   }
 }
