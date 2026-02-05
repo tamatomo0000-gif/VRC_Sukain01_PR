@@ -44,6 +44,53 @@
   font-weight: bold;
   animation: fadeIn 1s ease;
 }
+/* 右上固定アイコン全体 */
+.floating-profile {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: rgba(0, 0, 0, 0.55);
+  padding: 6px 14px;
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+
+  color: #fff;
+  font-size: 14px;
+  z-index: 9999;
+}
+
+/* アイコン画像 */
+.floating-profile img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 上へ戻るボタン */
+#back-to-top {
+  background: #ffffffaa;
+  border: none;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* ホバー時のアニメーション */
+#back-to-top:hover {
+  background: #ffffffdd;
+  transform: translateY(-2px);
+}
 
 /* ==========================================================
    Reset

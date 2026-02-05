@@ -1,5 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  // 上へ戻るボタン
+document.getElementById("back-to-top").addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+  
   /* ==========================================================
      1. スケジュール表の折りたたみ
   ========================================================== */
