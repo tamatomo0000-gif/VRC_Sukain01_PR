@@ -9,6 +9,9 @@
   <!-- タイトル -->
   <title>Sukain01 / ゲームプロフィール</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ファビコン -->
+  <link rel="icon" href="./img/VRC_icon.png" type="image/png">
 </head>
 
 <!-- ローディング画面 -->
@@ -18,14 +21,21 @@
   <p>Loading...</p>
 </div>
 
-<!-- 右上固定アイコン -->
-<div class="floating-profile">
-  <img src="img/VRC_icon.png" alt="アイコン">
-  <span>Sukain01</span>
+<!-- 右上固定ナビゲーション（全アイコン統合） -->
+<nav class="top-right-nav">
+  <a href="./index.html" class="nav-btn">🏠 ホーム</a>
+  <a href="./homu_page/friend.html" class="nav-btn" target="_blank" rel="noopener noreferrer">👥 フレンド</a>
+  <a href="https://twitter.com/" class="nav-btn" target="_blank" rel="noopener noreferrer">🐦 Twitter</a>
+
+  <!-- プロフィールアイコン -->
+  <div class="nav-profile">
+    <img src="img/VRC_icon.png" alt="プロフィールアイコン">
+    <span>Sukain01</span>
+  </div>
 
   <!-- 上へ戻るボタン -->
-  <button id="back-to-top">↑</button>
-</div>
+  <button id="back-to-top" class="nav-btn small-btn">↑</button>
+</nav>
 
 
 
@@ -174,17 +184,17 @@
       <div class="photo-wrapper">
 
         <div class="photo-card">
-          <img src="photos/photo1.png" alt="VRC写真1：お気に入りの瞬間①">
+          <img src="./img/NO_MIAGE.png" alt="VRC写真1：お気に入りの瞬間①">
           <p>お気に入りの瞬間①</p>
         </div>
 
         <div class="photo-card">
-          <img src="photos/photo2.png" alt="VRC写真2：お気に入りの瞬間②">
+          <img src="./img/NO_MIAGE.png" alt="VRC写真2：お気に入りの瞬間②">
           <p>お気に入りの瞬間②</p>
         </div>
 
         <div class="photo-card">
-          <img src="photos/photo3.png" alt="VRC写真3：お気に入りの瞬間③">
+          <img src="./img/NO_MIAGE.png" alt="VRC写真3：お気に入りの瞬間③">
           <p>お気に入りの瞬間③</p>
         </div>
 

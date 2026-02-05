@@ -1,5 +1,5 @@
 /* ==========================================================
-   Reset
+   リセット
 ========================================================== */
 * {
   margin: 0;
@@ -8,7 +8,7 @@
 }
 
 /* ==========================================================
-   Animations
+   アニメーション
 ========================================================== */
 @keyframes spin {
   to { transform: rotate(360deg); }
@@ -20,7 +20,7 @@
 }
 
 /* ==========================================================
-   Base Style
+   基本スタイル
 ========================================================== */
 body {
   font-family: "Segoe UI", sans-serif;
@@ -49,7 +49,29 @@ h2 {
 }
 
 /* ==========================================================
-   Loading Screen
+   タイトルアイコン
+========================================================== */
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-title::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-image: url("./img/VRC_icon.png");
+  background-size: cover;
+  background-position: center;
+  display: inline-block;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+/* ==========================================================
+   ローディング画面
 ========================================================== */
 #loading {
   position: fixed;
@@ -94,55 +116,68 @@ h2 {
   font-weight: bold;
   animation: fadeIn 1s ease;
 }
-
 /* ==========================================================
-   Floating Profile (右上固定アイコン)
+   右上固定ナビ（全アイコン横並び）
 ========================================================== */
-.floating-profile {
+.top-right-nav {
   position: fixed;
   top: 15px;
   right: 15px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   background: rgba(0, 0, 0, 0.55);
-  padding: 6px 14px;
-  border-radius: 20px;
+  padding: 8px 14px;
+  border-radius: 30px;
   backdrop-filter: blur(6px);
-  color: #fff;
-  font-size: 14px;
   z-index: 9999;
 }
 
-.floating-profile img {
+/* 共通ボタンスタイル */
+.top-right-nav .nav-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.top-right-nav .nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* 小型ボタン（↑） */
+.top-right-nav .small-btn {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  text-align: center;
+  line-height: 28px;
+}
+
+/* プロフィールアイコン */
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.nav-profile img {
   width: 28px;
   height: 28px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-/* 上へ戻るボタン */
-#back-to-top {
-  background: #ffffffaa;
-  border: none;
-  border-radius: 50%;
-  width: 26px;
-  height: 26px;
-  cursor: pointer;
-  font-size: 16px;
-  line-height: 26px;
-  text-align: center;
-  padding: 0;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-#back-to-top:hover {
-  background: #ffffffdd;
-  transform: translateY(-2px);
-}
-
 /* ==========================================================
-   Card Layout
+   カードレイアウト
 ========================================================== */
 section {
   background: #fff;
@@ -153,7 +188,7 @@ section {
 }
 
 /* ==========================================================
-   Icon Area
+   アイコンエリア
 ========================================================== */
 .icon-area {
   text-align: center;
@@ -178,7 +213,7 @@ section {
 }
 
 /* ==========================================================
-   Profile Section
+   プロフィールセクション
 ========================================================== */
 .profile-wrapper {
   display: flex;
@@ -213,7 +248,7 @@ section {
 }
 
 /* ==========================================================
-   Avatar Image
+   アバター画像
 ========================================================== */
 .avatar-image img {
   width: 180px;
@@ -225,7 +260,7 @@ section {
 }
 
 /* ==========================================================
-   Hobby Cards
+   趣味カード
 ========================================================== */
 .hobby-wrapper {
   display: grid;
@@ -242,7 +277,7 @@ section {
 }
 
 /* ==========================================================
-   Photo Gallery
+   写真ギャラリー
 ========================================================== */
 .photo-wrapper {
   display: flex;
@@ -268,7 +303,7 @@ section {
 }
 
 /* ==========================================================
-   Friend Icons
+   フレンドアイコン
 ========================================================== */
 .friend-icon {
   width: 80px;
@@ -280,7 +315,7 @@ section {
 }
 
 /* ==========================================================
-   Button Link Style
+   ボタンリンク
 ========================================================== */
 .btn-link {
   display: block;
@@ -308,7 +343,7 @@ section {
 }
 
 /* ==========================================================
-   Footer
+   フッター
 ========================================================== */
 footer p {
   font-size: 0.9rem;
@@ -316,7 +351,7 @@ footer p {
 }
 
 /* ==========================================================
-   Timeline (Schedule)
+   タイムライン（スケジュール）
 ========================================================== */
 .timeline {
   border-left: 3px solid #6cf;
@@ -392,7 +427,7 @@ header.small {
 }
 
 /* ==========================================================
-   Responsive
+   レスポンシブ
 ========================================================== */
 @media (max-width: 768px) {
   .hobby-wrapper {
