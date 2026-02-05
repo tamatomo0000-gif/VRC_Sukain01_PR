@@ -48,27 +48,6 @@ h2 {
   border-left: 5px solid #0078ff;
 }
 
-/* ==========================================================
-   タイトルアイコン
-========================================================== */
-
-.page-title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.page-title::before {
-  content: "";
-  width: 24px;
-  height: 24px;
-  background-image: url("./img/VRC_icon.png");
-  background-size: cover;
-  background-position: center;
-  display: inline-block;
-  margin-right: 8px;
-  border-radius: 50%;
-}
 
 /* ==========================================================
    ローディング画面
