@@ -1,4 +1,54 @@
 /* ==========================================================
+   Reset
+========================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   Animations
+========================================================== */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================
+   Base Style
+========================================================== */
+body {
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.7;
+  padding: 20px;
+  background: #f5f5f5;
+  color: #333;
+}
+
+header,
+footer {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  padding-left: 10px;
+  border-left: 5px solid #0078ff;
+}
+
+/* ==========================================================
    Loading Screen
 ========================================================== */
 #loading {
@@ -44,7 +94,10 @@
   font-weight: bold;
   animation: fadeIn 1s ease;
 }
-/* 右上固定アイコン全体 */
+
+/* ==========================================================
+   Floating Profile (右上固定アイコン)
+========================================================== */
 .floating-profile {
   position: fixed;
   top: 15px;
@@ -52,18 +105,15 @@
   display: flex;
   align-items: center;
   gap: 10px;
-
   background: rgba(0, 0, 0, 0.55);
   padding: 6px 14px;
   border-radius: 20px;
   backdrop-filter: blur(6px);
-
   color: #fff;
   font-size: 14px;
   z-index: 9999;
 }
 
-/* アイコン画像 */
 .floating-profile img {
   width: 28px;
   height: 28px;
@@ -86,48 +136,9 @@
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
-/* ホバー時のアニメーション */
 #back-to-top:hover {
   background: #ffffffdd;
   transform: translateY(-2px);
-}
-
-/* ==========================================================
-   Reset
-========================================================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* ==========================================================
-   Base Style
-========================================================== */
-body {
-  font-family: "Segoe UI", sans-serif;
-  line-height: 1.7;
-  padding: 20px;
-  background: #f5f5f5;
-  color: #333;
-}
-
-header,
-footer {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-h2 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-  padding-left: 10px;
-  border-left: 5px solid #0078ff;
 }
 
 /* ==========================================================
@@ -211,6 +222,23 @@ section {
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   display: block;
+}
+
+/* ==========================================================
+   Hobby Cards
+========================================================== */
+.hobby-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 0 10px;
+}
+
+.hobby-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 /* ==========================================================
@@ -366,6 +394,12 @@ header.small {
 /* ==========================================================
    Responsive
 ========================================================== */
+@media (max-width: 768px) {
+  .hobby-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 600px) {
   body {
     padding: 12px;
@@ -392,18 +426,4 @@ header.small {
   .photo-card {
     width: calc(50% - 10px);
   }
-}
-
-/* ==========================================================
-   Animations
-========================================================== */
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to   { opacity: 1; transform: translateY(0); }
 }
