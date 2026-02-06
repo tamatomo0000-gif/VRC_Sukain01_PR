@@ -40,12 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ナビ折りたたみ */
+  /* ナビ折りたたみ（小→大） */
   const toggleBtn = document.querySelector(".toggle-nav-btn");
+  const nav = document.querySelector(".top-right-nav");
   const navItems = document.querySelector(".nav-items");
 
-  if (toggleBtn && navItems) {
+  if (toggleBtn && nav && navItems) {
     toggleBtn.addEventListener("click", () => {
+      nav.classList.toggle("open");
       navItems.classList.toggle("closed");
     });
   }

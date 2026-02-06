@@ -100,26 +100,89 @@ header {
   animation: fadeIn 1s ease;
 }
 /* ==========================================================
-   右上固定ナビ（全アイコン縦並び）
+   右上固定ナビ
 ========================================================== */
 .top-right-nav {
   position: fixed;
   top: 15px;
   right: 15px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 12px;
+  gap: 8px;
   background: rgba(0, 0, 0, 0.55);
-  padding: 12px 10px;
-  border-radius: 30px;
+  padding: 8px;
+  border-radius: 40px;
   backdrop-filter: blur(6px);
   z-index: 9999;
+
+  width: 48px;
+  height: 48px;
+  transition: width 0.3s ease, height 0.3s ease, padding 0.3s ease;
 }
 
-/* 共通ボタンスタイル */
-.top-right-nav .nav-btn {
+/* 開いた時だけ大きくなる */
+.top-right-nav.open {
+  width: 160px;
+  height: auto;
+  padding: 14px 12px;
+}
+
+/* ハンバーガーボタン */
+.toggle-nav-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: 0.2s ease;
+  border: none;
+  color: #fff;
+}
+
+.toggle-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* メニュー項目（アニメーション） */
+.nav-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.nav-items.closed {
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+}
+
+/* プロフィール */
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.nav-profile img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* 共通ボタン */
+.nav-btn {
   background: rgba(255, 255, 255, 0.15);
   color: #fff;
   padding: 6px 12px;
@@ -131,34 +194,19 @@ header {
   cursor: pointer;
 }
 
-.top-right-nav .nav-btn:hover {
+.nav-btn:hover {
   background: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
+  transform: scale(1.05);
 }
 
-/* 小型ボタン（TOP） */
-.top-right-nav .small-btn {
-  width: 20px;
+/* 小型ボタン */
+.small-btn {
+  width: 90px;
   height: 20px;
   padding: 0;
-  text-align: center;
-  line-height: 20px;
-}
-
-/* プロフィールアイコン */
-.nav-profile {
   display: flex;
   align-items: center;
-  gap: 6px;
-  color: #fff;
-  font-size: 14px;
-}
-
-.nav-profile img {
-  width: 19px;
-  height: 28px;
-  border-radius: 50%;
-  object-fit: cover;
+  justify-content: center;
 }
 /* ==========================================================
    折りたたみメニュー

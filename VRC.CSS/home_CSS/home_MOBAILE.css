@@ -13,112 +13,71 @@
     line-height: 1.8;
   }
 
-  h1 {
-    font-size: 1.4rem;
-    margin-bottom: 8px;
-  }
-
-  h2 {
-    font-size: 1.1rem;
-    padding-left: 8px;
-    border-left-width: 4px;
-  }
-
-  section {
-    padding: 12px;
-    margin-bottom: 18px;
-  }
-
-  /* 右上ナビ */
+  /* 右上ナビ（スマホ用調整） */
   .top-right-nav {
     top: 10px;
     right: 10px;
-    padding: 25px 10px;
-    gap: 8px;
+    width: 46px;
+    height: 46px;
+    padding: 6px;
   }
 
-  .top-right-nav .nav-btn {
-    padding: 6px 10px;
+  .top-right-nav.open {
+    width: 150px;
+    padding: 12px 10px;
+  }
+
+  .toggle-nav-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .nav-btn {
     font-size: 12px;
-    border-radius: 6px;
+    padding: 6px 8px;
   }
 
-  .top-right-nav .small-btn {
+  .small-btn {
     width: 90px;
     height: 26px;
-    line-height: 26px;
   }
 
-  /* プロフィールレイアウト */
-  .profile-wrapper {
-    flex-direction: column;
-    gap: 15px;
+  /* プロフィール */
+  .nav-profile img {
+    width: 24px;
+    height: 24px;
   }
 
-  .profile-list dt {
-    width: 100px;
-    font-size: 14px;
-  }
+  /* 以下はあなたの既存スマホ調整 */
+  h1 { font-size: 1.4rem; }
+  h2 { font-size: 1.1rem; padding-left: 8px; border-left-width: 4px; }
 
-  .profile-list dd {
-    font-size: 14px;
-  }
+  section { padding: 12px; margin-bottom: 18px; }
 
-  /* アバター画像 */
-  .avatar-image img {
-    width: 140px;
-    height: 240px;
-  }
+  .profile-wrapper { flex-direction: column; gap: 15px; }
+  .profile-list dt { width: 100px; font-size: 14px; }
+  .profile-list dd { font-size: 14px; }
 
-  /* 趣味カード：スマホ2列 */
+  .avatar-image img { width: 140px; height: 240px; }
+
   .hobby-wrapper {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* ← これが正しい */
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 
-  .hobby-card img {
-    border-radius: 6px;
-  }
+  .photo-card { width: calc(50% - 8px); padding: 8px; }
+  .photo-card img { height: 120px; }
 
-  /* 写真ギャラリー：2列 */
-  .photo-card {
-    width: calc(50% - 8px);
-    padding: 8px;
-  }
+  .friend-icon { width: 90px; height: 90px; }
 
-  .photo-card img {
-    height: 120px;
-  }
+  .btn-link { padding: 12px 0; font-size: 15px; }
 
-  /* フレンドアイコン */
-  .friend-icon {
-    width: 90px;
-    height: 90px;
-  }
+  .timeline { padding-left: 15px; margin-left: 5px; }
+  .timeline-item { margin-bottom: 16px; }
+  .timeline-item::before { left: -20px; }
 
-  /* ボタンリンク */
-  .btn-link {
-    padding: 12px 0;
-    font-size: 15px;
-    border-radius: 6px;
-  }
-
-  /* タイムライン */
-  .timeline {
-    padding-left: 15px;
-    margin-left: 5px;
-  }
-
-  .timeline-item {
-    margin-bottom: 16px;
-  }
-
-  .timeline-item::before {
-    left: -20px;
-  }
-
-  /* 戻るボタン */
   .back-to-top {
     right: 10px;
     bottom: 10px;
