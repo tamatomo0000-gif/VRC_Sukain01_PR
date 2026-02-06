@@ -39,3 +39,11 @@ window.addEventListener("load", () => {
   loading.classList.add("hide");
   setTimeout(() => loading.style.display = "none", 600);
 });
+
+/* ナビ折りたたみ */
+const toggleBtn = document.querySelector(".toggle-nav-btn");
+const navItems = document.querySelector(".nav-items");
+
+toggleBtn.addEventListener("click", () => {
+  navItems.classList.toggle("closed");
+});

@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="VRC.CSS/home.css">
   <link rel="stylesheet" href="VRC.CSS/home_MOBILE.css">
 
-
-
   <!-- タイトル -->
   <title>Sukain01 / ゲームプロフィール</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,31 +15,32 @@
   <link rel="icon" href="./img/VRC_icon.png" type="image/png">
 </head>
 
-
 <body>
 
   <!-- ローディング画面 -->
-<div id="loading">
-  <img src="img/VRC_icon.png" alt="Loading Icon" class="loading-icon">
-  <div class="loader"></div>
-  <p>Loading...</p>
-</div>
-
-<!-- 右上固定ナビゲーション（全アイコン統合） -->
-<nav class="top-right-nav">
-  <a href="./index.html" class="nav-btn">Home</a>
-  <a href="./homu_page/friend.html" class="nav-btn" target="_blank" rel="noopener noreferrer">Friend</a>
-  <a href="https://twitter.com/" class="nav-btn" target="_blank" rel="noopener noreferrer">Twitter</a>
-
-  <!-- プロフィールアイコン -->
-  <div class="nav-profile">
-    <img src="img/VRC_icon.png" alt="プロフィールアイコン">
-    <span>Sukain01</span>
+  <div id="loading">
+    <img src="img/VRC_icon.png" alt="Loading Icon" class="loading-icon">
+    <div class="loader"></div>
+    <p>Loading...</p>
   </div>
 
-  <!-- 上へ戻るボタン -->
-  <button id="back-to-top" class="nav-btn small-btn">↑</button>
-</nav>
+  <!-- 右上固定ナビゲーション -->
+  <nav class="top-right-nav">
+    <button class="toggle-nav-btn" aria-label="メニューを開閉">☰</button>
+
+    <div class="nav-items closed">
+      <div class="nav-profile">
+        <img src="img/VRC_icon.png" alt="プロフィールアイコン">
+        <span>Sukain01</span>
+      </div>
+
+      <a href="./index.html" class="nav-btn">Home</a>
+      <a href="./homu_page/friend.html" class="nav-btn" target="_blank" rel="noopener noreferrer">Friend</a>
+      <a href="https://twitter.com/" class="nav-btn" target="_blank" rel="noopener noreferrer">Twitter</a>
+
+      <button id="back-to-top" class="nav-btn small-btn">TOP</button>
+    </div>
+  </nav>
 
   <!-- ヘッダー -->
   <header>
@@ -75,7 +74,6 @@
 
       <div class="profile-wrapper">
 
-        <!-- 左：プロフィール項目 -->
         <dl class="profile-list">
 
           <div>
@@ -110,7 +108,6 @@
 
         </dl>
 
-        <!-- 右：アバター画像 -->
         <div class="avatar-image">
           <img src="./img/VRC_icon.png" alt="Sukain01 のアバター画像">
         </div>
@@ -152,33 +149,35 @@
       </div>
     </section>
 
-    <!-- VRCはじめてからのスケジュール -->
-    　<section class="vrc-schedule">
-  <h2>VRCはじめてからのスケジュール</h2>
+    <!-- VRCスケジュール -->
+    <section class="vrc-schedule">
+      <h2>VRCはじめてからのスケジュール</h2>
 
-  <details>
-    <summary>2025年</summary>
-    <table class="schedule-table">
-      <tr><td>2025/06/04</td><td>VRChatを開始</td></tr>
-      <tr><td>2025/06/07</td><td>Meta Quest 3S を購入</td></tr>
-      <tr><td>2025/06/19</td><td>Shinano 購入！</td></tr>
-      <tr><td>2025/06/19</td><td>メス堕ち（笑）</td></tr>
-      <tr><td>2025/06/--</td><td>まめひなた購入</td></tr>
-      <tr><td>2025/08/19</td><td>ルルネ購入</td></tr>
-      <tr><td>2025/09/26</td><td>PCVRが使用可能（調整中）</td></tr>
-      <tr><td>2025/11/10</td><td>ふにゃ堕ち</td></tr>
-      <tr><td>2025/11/29</td><td>海外〜資格試験でVRC禁止</td></tr>
-    </table>
-  </details>
+      <details>
+        <summary>2025年</summary>
+        <table class="schedule-table">
+          <tr><td>2025/06/04</td><td>VRChatを開始</td></tr>
+          <tr><td>2025/06/07</td><td>Meta Quest 3S を購入</td></tr>
+          <tr><td>2025/06/19</td><td>Shinano 購入！</td></tr>
+          <tr><td>2025/06/19</td><td>メス堕ち（笑）</td></tr>
+          <tr><td>2025/06/--</td><td>まめひなた購入</td></tr>
+          <tr><td>2025/08/19</td><td>ルルネ購入</td></tr>
+          <tr><td>2025/09/26</td><td>PCVRが使用可能（調整中）</td></tr>
+          <tr><td>2025/11/10</td><td>ふにゃ堕ち</td></tr>
+          <tr><td>2025/11/29</td><td>海外〜資格試験でVRC禁止</td></tr>
+        </table>
+      </details>
 
-  <details>
-    <summary>2026年</summary>
-    <table class="schedule-table">
-      <tr><td>2026/01/14</td><td>VRC復帰</td></tr>
-      <tr><td>2026/01/16</td><td>重度のふにゃ堕ち</td></tr>
-    </table>
-  </details>
-</section>
+      <details>
+        <summary>2026年</summary>
+        <table class="schedule-table">
+          <tr><td>2026/01/14</td><td>VRC復帰</td></tr>
+          <tr><td>2026/01/16</td><td>重度のふにゃ堕ち</td></tr>
+          <tr><td>2026/02/02</td><td>プロフィールページ作成開始</td></tr>
+        </table>
+      </details>
+    </section>
+
     <!-- VRCフォトギャラリー -->
     <section class="photo-list">
       <h2>VRCフォトギャラリー</h2>
@@ -244,11 +243,19 @@
         <li>APEX Legends</li>
         <li>Minecraft</li>
       </ul>
+
+      <a class="btn-link" href="./homu_page/games_vido.html" target="_blank" rel="noopener noreferrer">
+        ゲーム動画リスト
+      </a>
     </section>
 
-    <!--好きな曲-->
-
-    <!---->
+    <!-- 好きな曲 -->
+    <section class="music">
+      <h2>好きな曲</h2>
+      <a class="btn-link" href="./homu_page/music.html" target="_blank" rel="noopener noreferrer">
+        好きな曲リスト
+      </a>
+    </section>
 
   </main>
 

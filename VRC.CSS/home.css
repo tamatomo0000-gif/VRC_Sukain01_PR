@@ -100,18 +100,20 @@ header {
   animation: fadeIn 1s ease;
 }
 /* ==========================================================
-   右上固定ナビ（全アイコン横並び）
+   右上固定ナビ（全アイコン縦並び）
 ========================================================== */
 .top-right-nav {
   position: fixed;
   top: 15px;
   right: 15px;
   display: flex;
+  flex-direction: column; 
   align-items: center;
+  text-align: center;
   gap: 12px;
   background: rgba(0, 0, 0, 0.55);
-  padding: 8px 14px;
-  border-radius: 30px;
+  padding: 12px 10px;
+  border-radius: 20px;
   backdrop-filter: blur(6px);
   z-index: 9999;
 }
@@ -136,7 +138,7 @@ header {
 
 /* 小型ボタン（↑） */
 .top-right-nav .small-btn {
-  width: 28px;
+  width: 90px;
   height: 28px;
   padding: 0;
   text-align: center;
@@ -157,6 +159,41 @@ header {
   height: 28px;
   border-radius: 50%;
   object-fit: cover;
+}
+/* ==========================================================
+   折りたたみメニュー
+========================================================== */
+
+/* 折りたたみ*/
+.nav-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  max-height: 500px; /* 開いている時 */
+  transition: max-height 0.3s ease;
+}
+
+/* 閉じた状態 */
+.nav-items.closed {
+  max-height: 0;
+  padding: 0;
+}
+
+/* 開閉ボタン */
+.toggle-nav-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.2s ease;
+}
+
+.toggle-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
 }
 
 /* ==========================================================
