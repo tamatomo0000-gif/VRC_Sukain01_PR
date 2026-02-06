@@ -113,7 +113,7 @@ header {
   gap: 12px;
   background: rgba(0, 0, 0, 0.55);
   padding: 12px 10px;
-  border-radius: 20px;
+  border-radius: 30px;
   backdrop-filter: blur(6px);
   z-index: 9999;
 }
@@ -123,7 +123,7 @@ header {
   background: rgba(255, 255, 255, 0.15);
   color: #fff;
   padding: 6px 12px;
-  border-radius: 8px;
+  border-radius: 6px;
   text-decoration: none;
   font-size: 14px;
   transition: 0.2s ease;
@@ -136,13 +136,13 @@ header {
   transform: translateY(-2px);
 }
 
-/* 小型ボタン（↑） */
+/* 小型ボタン（TOP） */
 .top-right-nav .small-btn {
-  width: 90px;
-  height: 28px;
+  width: 20px;
+  height: 20px;
   padding: 0;
   text-align: center;
-  line-height: 28px;
+  line-height: 20px;
 }
 
 /* プロフィールアイコン */
@@ -155,7 +155,7 @@ header {
 }
 
 .nav-profile img {
-  width: 28px;
+  width: 19px;
   height: 28px;
   border-radius: 50%;
   object-fit: cover;
