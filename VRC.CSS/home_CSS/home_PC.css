@@ -52,7 +52,6 @@ header {
   margin-top: 80px;
 }
 
-
 /* ==========================================================
    ローディング画面
 ========================================================== */
@@ -99,8 +98,9 @@ header {
   font-weight: bold;
   animation: fadeIn 1s ease;
 }
+
 /* ==========================================================
-   右上固定ナビ
+   右上固定ナビ（PC・スマホ共通の形）
 ========================================================== */
 .top-right-nav {
   position: fixed;
@@ -110,6 +110,7 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 8px;
+
   background: rgba(0, 0, 0, 0.55);
   padding: 8px;
   border-radius: 40px;
@@ -118,17 +119,26 @@ header {
 
   width: 48px;
   height: 48px;
-  transition: width 0.3s ease, height 0.3s ease, padding 0.3s ease;
+  overflow: hidden;
+
+  transition: width 0.35s ease, height 0.35s ease, padding 0.35s ease;
+
+  right: 15px; 
+  left: auto;
 }
 
-/* 開いた時だけ大きくなる */
+/* PC：横に広がる */
 .top-right-nav.open {
-  width: 160px;
+  width: 600px;
   height: auto;
-  padding: 14px 12px;
+  padding: 14px 16px;
+
+  right: 15px; 
+  left: auto;
+
 }
 
-/* ハンバーガーボタン */
+/* ハンバーガーボタン（PC・スマホ共通） */
 .toggle-nav-btn {
   width: 32px;
   height: 32px;
@@ -148,21 +158,23 @@ header {
   background: rgba(255, 255, 255, 0.35);
 }
 
-/* メニュー項目（アニメーション） */
+/* ==========================================================
+   メニュー項目（PC：横並び）
+========================================================== */
 .nav-items {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   gap: 12px;
+
   overflow: hidden;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  max-height: 500px;
+  transition: max-height 0.3s ease;
 }
 
 .nav-items.closed {
-  opacity: 0;
-  transform: translateY(-6px);
-  pointer-events: none;
+  max-height: 0;
 }
 
 /* プロフィール */
@@ -207,41 +219,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-/* ==========================================================
-   折りたたみメニュー
-========================================================== */
-
-/* 折りたたみ*/
-.nav-items {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  overflow: hidden;
-  max-height: 500px; /* 開いている時 */
-  transition: max-height 0.3s ease;
-}
-
-/* 閉じた状態 */
-.nav-items.closed {
-  max-height: 0;
-  padding: 0;
-}
-
-/* 開閉ボタン */
-.toggle-nav-btn {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 18px;
-  transition: 0.2s ease;
-}
-
-.toggle-nav-btn:hover {
-  background: rgba(255, 255, 255, 0.35);
 }
 
 /* ==========================================================
@@ -419,7 +396,7 @@ footer p {
 }
 
 /* ==========================================================
-   タイムライン（スケジュール）
+   タイムライン
 ========================================================== */
 .timeline {
   border-left: 3px solid #6cf;
@@ -494,39 +471,3 @@ header.small {
   opacity: 0.9;
 }
 
-/* ==========================================================
-   レスポンシブ
-========================================================== */
-@media (max-width: 768px) {
-  .hobby-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  body {
-    padding: 12px;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-  }
-
-  section {
-    padding: 15px;
-  }
-
-  .profile-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .avatar-image img {
-    width: 150px;
-    height: 260px;
-  }
-
-  .photo-card {
-    width: calc(50% - 10px);
-  }
-}
