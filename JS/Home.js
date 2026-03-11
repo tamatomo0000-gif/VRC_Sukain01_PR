@@ -50,6 +50,19 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.classList.toggle("open");
       navItems.classList.toggle("closed");
     });
+
+    // PC では常時開く
+    const enforceDesktop = () => {
+      if (window.innerWidth > 600) {
+        nav.classList.add("open");
+        navItems.classList.remove("closed");
+      } else {
+        nav.classList.remove("open");
+        navItems.classList.add("closed");
+      }
+    };
+    enforceDesktop();
+    window.addEventListener("resize", enforceDesktop);
   }
 
 });

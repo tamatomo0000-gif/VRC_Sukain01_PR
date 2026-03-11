@@ -22,18 +22,29 @@
     line-height: 1.8;
   }
 
-  /* スマホ：縦に伸びる */
+  /* スマホ：縦に伸びる、右上固定 */
   .top-right-nav {
+    position: fixed;
     top: 10px;
     right: 10px;
     width: 130px;
     height: 46px;
     padding: 6px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 40px;
+    z-index: 10000;
   }
 
   .top-right-nav.open {
+    /* 右側に伸びる縦パネル */
+    top: 0;
+    right: 0;
     width: 200px;
-    padding: 60px 10px;
+    height: 100%;
+    padding: 60px 10px 10px;
+    background: rgba(0,0,0,0.85);
+    border-radius: 0;
+    z-index: 10000;
   }
 
   .toggle-nav-btn {
