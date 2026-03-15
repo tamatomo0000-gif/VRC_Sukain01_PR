@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
 /* ==========================================================
    アニメーション
 ========================================================== */
@@ -74,6 +79,8 @@ header,
 footer {
   text-align: center;
   margin-bottom: 25px;
+  background: #fff;
+  padding: 18px;
 }
 
 h1 {
@@ -201,6 +208,22 @@ header {
   transform: scale(1.05);
 }
 
+#back-to-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto 12px;
+  background: #ccc;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 0;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
 /* 小型ボタン */
 .small-btn {
   width: 90px;
@@ -209,4 +232,46 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* フレンド一覧 */
+.friend-list {
+  display: grid;
+  /* 3列レイアウト（幅が狭くなったら折り返す） */
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.friend-card {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  align-items: center;
+}
+
+.friend-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0,0,0,0.1);
+}
+
+.friend-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.friend-info a {
+  color: #0078ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.friend-info a:hover {
+  text-decoration: underline;
 }

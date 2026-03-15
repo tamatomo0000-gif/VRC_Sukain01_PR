@@ -1,0 +1,30 @@
+/* ==========================================================
+   動画スタイル
+========================================================== */
+.video-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.video-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+}
+
+.video-card video {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.video-card p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}

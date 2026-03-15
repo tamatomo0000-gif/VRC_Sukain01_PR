@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../VRC.CSS/GAME_CSS/game_PC.css">
+  <link rel="stylesheet" href="../VRC.CSS/GAME_CSS/game_MOBAILE.css">
+
+  <!-- タイトル -->
+  <title>Sukain01 / ゲーム動画リスト</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ファビコン -->
+  <link rel="icon" href="../img/HOME_imge/VRC_icon.png" type="image/png">
+</head>
+
+<body>
+
+  <!-- ローディング画面 -->
+  <div id="loading">
+    <img src="../img/HOME_imge/VRC_icon.png" alt="Loading Icon" class="loading-icon">
+    <div class="loader"></div>
+    <p>Loading...</p>
+  </div>
+
+  <!-- 右上固定ナビゲーション -->
+  <nav class="top-right-nav">
+    <button class="toggle-nav-btn" aria-label="メニューを開閉">☰</button>
+
+    <div class="nav-items closed">
+      <div class="nav-profile">
+        <img src="../img/HOME_imge/VRC_icon.png" alt="プロフィールアイコン">
+        <span>Sukain01 / SKY_02</span>
+      </div>
+
+      <a href="../index.html" class="nav-btn small-btn">Home</a>
+      <a href="https://www.youtube.com/channel/UCczgfZCVir83w5LQhIkdRpQ" class="nav-btn small-btn" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://twitter.com/Sukain0" class="nav-btn small-btn" target="_blank" rel="noopener noreferrer">Twitter</a>
+
+    </div>
+  </nav>
+
+  <!-- ヘッダー -->
+  <header>
+    <h1>ゲーム動画リスト</h1>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main>
+
+    <!-- CODの動画セクション -->
+    <section class="video-gallery">
+      <h2>CODの動画</h2>
+
+      <!-- 動画を追加するには、以下の <div class="video-card"> をコピーして src とタイトルを変更してください -->
+      <div class="video-card">
+        <video controls preload="metadata" poster="../img/HOME_imge/VRC_icon.png">
+          <source src="../img/HOME_imge/sample_video.mp4" type="video/mp4">
+          お使いのブラウザーは動画タグに対応していません。
+        </video>
+        <p>COD動画1（ここにタイトルを入れてください）</p>
+      </div>
+
+      <!-- 追加のCOD動画カードはここに挿入 -->
+
+    </section>
+
+    <!-- VRCの動画セクション -->
+    <section class="video-gallery">
+      <h2>VRCの動画</h2>
+
+      <div class="video-card">
+        <video controls preload="metadata" poster="../img/HOME_imge/VRC_icon.png">
+          <source src="../img/HOME_imge/sample_video2.mp4" type="video/mp4">
+          お使いのブラウザーは動画タグに対応していません。
+        </video>
+        <p>VRC動画1（ここにタイトルを入れてください）</p>
+      </div>
+
+      <!-- 追加のVRC動画カードはここに挿入 -->
+
+    </section>
+
+    <!-- ゼンゼロの動画セクション -->
+    <section class="video-gallery">
+      <h2>ゼンゼロの動画</h2>
+
+      <div class="video-card">
+        <video controls preload="metadata" poster="../img/HOME_imge/VRC_icon.png">
+          <source src="../img/HOME_imge/sample_video3.mp4" type="video/mp4">
+          お使いのブラウザーは動画タグに対応していません。
+        </video>
+        <p>ゼンゼロ動画1（ここにタイトルを入れてください）</p>
+      </div>
+
+      <!-- 追加のゼンゼロ動画カードはここに挿入 -->
+
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer>
+    <button id="back-to-top" class="nav-btn small-btn">⇧</button>
+    <p>&copy; <time datetime="2026-02-06">2026/02/10</time></p>
+  </footer>
+
+  <!-- JS -->
+  <script src="../JS/GAMES_VIDO.js"></script>
+
+</body>
+</html>

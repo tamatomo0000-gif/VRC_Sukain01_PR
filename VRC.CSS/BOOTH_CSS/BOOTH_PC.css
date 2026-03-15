@@ -7,6 +7,11 @@
   box-sizing: border-box;
 }
 
+img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
 /* ==========================================================
    基本スタイル
 ========================================================== */
@@ -22,6 +27,8 @@ header,
 footer {
   text-align: center;
   margin-bottom: 25px;
+  background: #fff;
+  padding: 18px;
 }
 
 header {
@@ -147,6 +154,22 @@ h2 {
 .nav-btn:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: scale(1.05);
+}
+
+#back-to-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto 12px;
+  background: #ccc;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 0;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 /* 小型ボタン */

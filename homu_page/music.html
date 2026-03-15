@@ -40,7 +40,6 @@
       <a href="https://twitter.com/Sukain0"
          class="nav-btn small-btn" target="_blank" rel="noopener noreferrer">Twitter</a>
 
-      <button id="back-to-top" class="nav-btn small-btn">TOP</button>
     </div>
   </nav>
 
@@ -51,16 +50,66 @@
 
   <!-- メインコンテンツ -->
   <main>
-    <!-- 必要な BOOTH コンテンツをここに追加 -->
+    <!-- 音楽プレーヤー -->
+    <section class="music-player">
+      <div class="player-container">
+        <h2>プレイヤー</h2>
+
+        <!-- レコード風デザイン -->
+        <div class="record-player">
+          <div class="record">
+            <div class="record-center"></div>
+          </div>
+          <audio id="music-audio" controls preload="metadata">
+            <source id="music-source" src="../img/HOME_imge/song01.mp3" type="audio/mpeg">
+            お使いのブラウザーは audio に対応していません。
+          </audio>
+        </div>
+
+        <div class="player-meta">
+          <span id="current-title">Song 1</span>
+          <button id="prev-track" class="nav-btn small-btn">前へ</button>
+          <button id="next-track" class="nav-btn small-btn">次へ</button>
+        </div>
+      </div>
+
+      <div class="playlist-container">
+        <h2>曲リスト（クリックで再生）</h2>
+        <ul class="playlist" id="playlist">
+          <!-- 以下の行をコピーして曲を追加 -->
+          <li data-src="../img/HOME_imge/song01.mp3" data-title="Song 1">01. Song 1</li>
+          <li data-src="../img/HOME_imge/song02.mp3" data-title="Song 2">02. Song 2</li>
+          <li data-src="../img/HOME_imge/song03.mp3" data-title="Song 3">03. Song 3</li>
+          <li data-src="../img/HOME_imge/song04.mp3" data-title="Song 4">04. Song 4</li>
+          <li data-src="../img/HOME_imge/song05.mp3" data-title="Song 5">05. Song 5</li>
+          <li data-src="../img/HOME_imge/song06.mp3" data-title="Song 6">06. Song 6</li>
+          <li data-src="../img/HOME_imge/song07.mp3" data-title="Song 7">07. Song 7</li>
+          <li data-src="../img/HOME_imge/song08.mp3" data-title="Song 8">08. Song 8</li>
+          <li data-src="../img/HOME_imge/song09.mp3" data-title="Song 9">09. Song 9</li>
+          <li data-src="../img/HOME_imge/song10.mp3" data-title="Song 10">10. Song 10</li>
+          <li data-src="../img/HOME_imge/song11.mp3" data-title="Song 11">11. Song 11</li>
+          <li data-src="../img/HOME_imge/song12.mp3" data-title="Song 12">12. Song 12</li>
+          <li data-src="../img/HOME_imge/song13.mp3" data-title="Song 13">13. Song 13</li>
+          <li data-src="../img/HOME_imge/song14.mp3" data-title="Song 14">14. Song 14</li>
+          <li data-src="../img/HOME_imge/song15.mp3" data-title="Song 15">15. Song 15</li>
+          <li data-src="../img/HOME_imge/song16.mp3" data-title="Song 16">16. Song 16</li>
+          <li data-src="../img/HOME_imge/song17.mp3" data-title="Song 17">17. Song 17</li>
+          <li data-src="../img/HOME_imge/song18.mp3" data-title="Song 18">18. Song 18</li>
+          <li data-src="../img/HOME_imge/song19.mp3" data-title="Song 19">19. Song 19</li>
+          <li data-src="../img/HOME_imge/song20.mp3" data-title="Song 20">20. Song 20</li>
+        </ul>
+      </div>
+    </section>
   </main>
 
   <!-- フッター -->
   <footer>
+    <button id="back-to-top" class="nav-btn small-btn">⇧</button>
     <p>&copy; <time datetime="2026-02-06">2026/02/10</time></p>
   </footer>
 
   <!-- JS -->
-  <script src="../JS/MUSIC.js"></script>
+  <script src="../JS/MUSIC_PLAYER.js"></script>
 
 </body>
 </html>
