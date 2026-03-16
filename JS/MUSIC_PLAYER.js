@@ -1,8 +1,6 @@
-// 音楽プレーヤー用のシンプルなプレイリスト制御
-// - 曲リストをクリックすると再生を開始
-// - 「前へ」「次へ」で曲を切り替え
-// - ナビゲーション開閉とローディング画面を制御
-
+// ===============================
+// 要素取得
+// ===============================
 const audio = document.getElementById("music-audio");
 const source = document.getElementById("music-source");
 const titleEl = document.getElementById("current-title");
@@ -10,44 +8,20 @@ const playlist = document.getElementById("playlist");
 const prevBtn = document.getElementById("prev-track");
 const nextBtn = document.getElementById("next-track");
 
-// カスタムコントロール要素
 const playPauseBtn = document.getElementById("play-pause-btn");
 const progressBar = document.getElementById("progress-bar");
 const currentTimeEl = document.getElementById("current-time");
 const durationEl = document.getElementById("duration");
-const muteBtn = document.getElementById("mute-btn");
 const volumeBar = document.getElementById("volume-bar");
-
-function getAudioMimeType(src) {
-  if (!src) return "";
-  const ext = src
-    .split("?")[0]
-    .split("#")[0]
-    .split(".")
-    .pop()
-    .toLowerCase();
-
-  switch (ext) {
-    case "mp3":
-      return "audio/mpeg";
-    case "m4a":
-      // Apple AAC in MP4 container
-      return "audio/mp4";
-    case "aac":
-      return "audio/aac";
-    case "ogg":
-    case "oga":
-      return "audio/ogg";
-    case "wav":
-      return "audio/wav";
-    default:
-      return "";
-  }
-}
+const muteBtn = document.getElementById("mute-btn");
 
 let currentIndex = 0;
 let tracks = [];
 
+
+// ===============================
+// プレイリスト初期化
+// ===============================
 function initPlaylist() {
   if (!playlist) return;
 
@@ -69,123 +43,140 @@ function initPlaylist() {
     });
   });
 
-  // 初期状態で1曲目をセット
   if (tracks.length > 0) {
     setTrack(0);
   }
 }
 
+
+// ===============================
+// 曲セット
+// ===============================
 function setTrack(index) {
   if (!audio || !source || !titleEl) return;
   if (index < 0 || index >= tracks.length) return;
 
   currentIndex = index;
   const track = tracks[currentIndex];
-  source.src = track.src;
-  const mime = getAudioMimeType(track.src);
-  if (mime) {
-    source.type = mime;
-  } else {
-    // If we don't know the mime type, remove any previously set type so the browser can try to infer it.
-    source.removeAttribute("type");
-  }
 
+  source.src = track.src;
   audio.load();
   titleEl.textContent = track.title;
+
   updateActiveItem();
-  // 進捗バーと時間をリセット
+}
+
+
+// ===============================
+// 再生・停止
+// ===============================
+function play() {
+  audio.play().catch(() => {});
+}
+
+function pause() {
+  audio.pause();
+}
+
+
+// ===============================
+// 再生中の曲をハイライト
+// ===============================
+function updateActiveItem() {
+  tracks.forEach((track) => {
+    track.element.classList.toggle("active", track.index === currentIndex);
+  });
+}
+
+
+// ===============================
+// 前へ・次へ
+// ===============================
+prevBtn.addEventListener("click", () => {
+  const newIndex = (currentIndex - 1 + tracks.length) % tracks.length;
+  setTrack(newIndex);
+  play();
+});
+
+nextBtn.addEventListener("click", () => {
+  const newIndex = (currentIndex + 1) % tracks.length;
+  setTrack(newIndex);
+  play();
+});
+
+
+// ===============================
+// 再生/停止ボタン
+// ===============================
+playPauseBtn.addEventListener("click", () => {
+  if (audio.paused) {
+    play();
+  } else {
+    pause();
+  }
+});
+
+audio.addEventListener("play", () => {
+  playPauseBtn.textContent = "⏸";
+});
+
+audio.addEventListener("pause", () => {
+  playPauseBtn.textContent = "▶️";
+});
+
+
+// ===============================
+// シークバー（再生バー）
+// ===============================
+audio.addEventListener("timeupdate", () => {
+  if (!audio.duration) return;
+
+  const progress = (audio.currentTime / audio.duration) * 100;
+  progressBar.value = progress;
+
+  currentTimeEl.textContent = formatTime(audio.currentTime);
+  durationEl.textContent = formatTime(audio.duration);
+});
+
+progressBar.addEventListener("input", () => {
+  const seekTime = (progressBar.value / 100) * audio.duration;
+  audio.currentTime = seekTime;
+});
+
+function formatTime(sec) {
+  if (isNaN(sec)) return "0:00";
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60).toString().padStart(2, "0");
+  return `${m}:${s}`;
+}
+
+
+// ===============================
+// 音量バー
+// ===============================
+volumeBar.addEventListener("input", () => {
+  audio.volume = volumeBar.value;
+});
+
+muteBtn.addEventListener("click", () => {
+  audio.muted = !audio.muted;
+  muteBtn.textContent = audio.muted ? "🔇" : "🔊";
+});
+
+
+// ===============================
+// 曲が変わったらバーをリセット
+// ===============================
+audio.addEventListener("loadedmetadata", () => {
   progressBar.value = 0;
   currentTimeEl.textContent = "0:00";
-  durationEl.textContent = "0:00";
-}
+  durationEl.textContent = formatTime(audio.duration);
+});
 
-function play() {
-  if (!audio) return;
-  audio.play().catch(() => {
-    // 自動再生制限などで再生できなかった場合は無視
-  });
-  if (playPauseBtn) playPauseBtn.textContent = "⏸️";
-}
 
-function setupCustomControls() {
-  if (!audio || !playPauseBtn || !progressBar || !volumeBar) return;
-
-  // 再生/一時停止ボタン
-  playPauseBtn.addEventListener("click", () => {
-    if (audio.paused) {
-      play();
-      playPauseBtn.textContent = "⏸️";
-    } else {
-      audio.pause();
-      playPauseBtn.textContent = "▶️";
-    }
-  });
-
-  // 進捗バー更新
-  audio.addEventListener("timeupdate", () => {
-    if (audio.duration) {
-      const progress = (audio.currentTime / audio.duration) * 100;
-      progressBar.value = progress;
-      currentTimeEl.textContent = formatTime(audio.currentTime);
-      durationEl.textContent = formatTime(audio.duration);
-    }
-  });
-
-  // 進捗バー操作
-  progressBar.addEventListener("input", () => {
-    if (audio.duration) {
-      audio.currentTime = (progressBar.value / 100) * audio.duration;
-    }
-  });
-
-  // 音量バー
-  volumeBar.addEventListener("input", () => {
-    audio.volume = volumeBar.value;
-    updateMuteBtn();
-  });
-
-  // ミュートボタン
-  muteBtn.addEventListener("click", () => {
-    audio.muted = !audio.muted;
-    updateMuteBtn();
-  });
-
-  // 曲終了時に次の曲へ
-  audio.addEventListener("ended", () => {
-    nextTrack();
-  });
-
-  // 初期音量設定
-  audio.volume = 1;
-  updateMuteBtn();
-}
-
-function updateMuteBtn() {
-  if (audio.muted || audio.volume === 0) {
-    muteBtn.textContent = "🔇";
-  } else {
-    muteBtn.textContent = "🔊";
-  }
-}
-
-function formatTime(seconds) {
-  const mins = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
-  return `${mins}:${secs.toString().padStart(2, '0')}`;
-}
-
-function nextTrack() {
-  setTrack((currentIndex + 1) % tracks.length);
-  play();
-  playPauseBtn.textContent = "⏸️";
-}
-
-function prevTrack() {
-  setTrack((currentIndex - 1 + tracks.length) % tracks.length);
-  play();
-  playPauseBtn.textContent = "⏸️";
-}
-
+// ===============================
+// ナビゲーション開閉
+// ===============================
 function setupNavToggle() {
   const toggleBtn = document.querySelector(".toggle-nav-btn");
   const nav = document.querySelector(".top-right-nav");
@@ -212,6 +203,10 @@ function setupNavToggle() {
   window.addEventListener("resize", enforceDesktop);
 }
 
+
+// ===============================
+// トップへ戻る
+// ===============================
 function setupBackToTop() {
   const backToTop = document.getElementById("back-to-top");
   if (!backToTop) return;
@@ -221,6 +216,10 @@ function setupBackToTop() {
   });
 }
 
+
+// ===============================
+// ローディング画面
+// ===============================
 function hideLoadingScreen() {
   const loading = document.getElementById("loading");
   if (!loading) return;
@@ -231,9 +230,12 @@ function hideLoadingScreen() {
   }, 600);
 }
 
+
+// ===============================
+// 初期化
+// ===============================
 window.addEventListener("DOMContentLoaded", () => {
   initPlaylist();
-  setupCustomControls();
   setupNavToggle();
   setupBackToTop();
 });
