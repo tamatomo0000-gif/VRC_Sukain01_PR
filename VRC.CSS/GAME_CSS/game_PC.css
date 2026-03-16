@@ -232,10 +232,60 @@ header {
    動画スタイル
 ========================================================== */
 .video-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
   margin-bottom: 30px;
+}
+
+.video-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.video-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+}
+
+.video-title {
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #0078ff;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.arrow {
+  text-align: center;
+  margin: 10px auto;
+  cursor: pointer;
+  background: gray;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  display: block;
+}
+
+.video-content {
+  display: none;
+}
+
+.video-content.show {
+  display: block;
+}
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
 }
 
 .video-card {
@@ -244,6 +294,7 @@ header {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 15px;
   text-align: center;
+  max-width: 400px;
 }
 
 .video-card video {
@@ -251,9 +302,24 @@ header {
   height: auto;
   max-width: 100%;
   border-radius: 4px;
+  aspect-ratio: 16 / 9;
 }
 
 .video-card p {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.video-item video {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 4px;
+  aspect-ratio: 16 / 9;
+}
+
+.video-item p {
   margin-top: 10px;
   font-weight: bold;
   color: #333;

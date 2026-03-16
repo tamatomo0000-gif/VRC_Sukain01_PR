@@ -38,9 +38,41 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", enforceDesktop);
   }
 
-});
+  /* 動画の折りたたみ */
+  const arrows = document.querySelectorAll('.arrow');
+  arrows.forEach(arrow => {
+    arrow.addEventListener('click', () => {
+      const item = arrow.closest('.video-item');
+      const content = item.querySelector('.video-content');
+      if (content) {
+        // 他のコンテンツを閉じる
+        document.querySelectorAll('.video-content.show').forEach(openContent => {
+          if (openContent !== content) {
+            openContent.classList.remove('show');
+            const otherArrow = openContent.closest('.video-item').querySelector('.arrow');
+            if (otherArrow) otherArrow.textContent = '⇩';
+          }
+        });
+        content.classList.toggle('show');
+        arrow.textContent = content.classList.contains('show') ? '⇧' : '⇩';
+      }
+    });
+  });
 
-/* ローディング画面 */
+  /* 動画のクリックで再生 */
+  const videos = document.querySelectorAll('video');
+  videos.forEach(video => {
+    video.addEventListener('click', (e) => {
+      e.preventDefault(); // デフォルトのコントロール表示を防ぐ
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  });
+
+});
 window.addEventListener("load", () => {
   const loading = document.getElementById("loading");
   if (loading) {
@@ -48,3 +80,15 @@ window.addEventListener("load", () => {
     setTimeout(() => loading.style.display = "none", 600);
   }
 });
+
+// 念のため、10秒後に強制的に隠す
+setTimeout(() => {
+  const loading = document.getElementById("loading");
+  if (loading && !loading.classList.contains("hide")) {
+    console.warn('Loading screen forced to hide after timeout');
+    loading.classList.add("hide");
+    setTimeout(() => {
+      if (loading) loading.style.display = "none";
+    }, 600);
+  }
+}, 10000);
