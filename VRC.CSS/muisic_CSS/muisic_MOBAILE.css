@@ -141,6 +141,7 @@
 
   .record-player audio {
     width: 100%;
+    display: none; /* カスタムコントロールを使用 */
   }
 
   .playlist {

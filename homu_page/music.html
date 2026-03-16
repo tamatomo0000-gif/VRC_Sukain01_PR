@@ -60,14 +60,21 @@
           <div class="record">
             <div class="record-center"></div>
           </div>
-          <audio id="music-audio" controls preload="metadata">
-            <source id="music-source" src="../img/HOME_imge/song01.mp3" type="audio/mpeg">
+          <audio id="music-audio" preload="metadata" oncontextmenu="return false;">
+            <source id="music-source" src="../img/MUISIC_image/song01.m4a">
             お使いのブラウザーは audio に対応していません。
           </audio>
         </div>
 
         <div class="player-meta">
           <span id="current-title">Song 1</span>
+          <div class="custom-controls">
+            <button id="play-pause-btn" class="control-btn">▶️</button>
+            <input type="range" id="progress-bar" value="0" max="100" step="0.1" class="progress-bar">
+            <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+            <button id="mute-btn" class="control-btn">🔊</button>
+            <input type="range" id="volume-bar" value="1" max="1" step="0.01" class="volume-bar">
+          </div>
           <button id="prev-track" class="nav-btn small-btn">前へ</button>
           <button id="next-track" class="nav-btn small-btn">次へ</button>
         </div>
@@ -75,28 +82,17 @@
 
       <div class="playlist-container">
         <h2>曲リスト（クリックで再生）</h2>
+        <p style="font-size: 12px; color: #666; margin-bottom: 10px;">※ 著作権保護のため、ダウンロード・録画・録音を禁止します。</p>
         <ul class="playlist" id="playlist">
-          <!-- 以下の行をコピーして曲を追加 -->
-          <li data-src="../img/MUSIC_image/[우타이테] LowFat _ 온탕(おん湯) DAYBREAK  FRONTLINE (Rap arrange).mp3" data-title="Song 1">01. Song 1</li>
-          <li data-src="../img/MUSIC_image/song02.mp3" data-title="Song 2">02. Song 2</li>
-          <li data-src="../img/MUSIC_image/song03.mp3" data-title="Song 3">03. Song 3</li>
-          <li data-src="../img/MUSIC_image/song04.mp3" data-title="Song 4">04. Song 4</li>
-          <li data-src="../img/MUSIC_image/song05.mp3" data-title="Song 5">05. Song 5</li>
-          <li data-src="../img/MUSIC_image/song06.mp3" data-title="Song 6">06. Song 6</li>
-          <li data-src="../img/MUSIC_image/song07.mp3" data-title="Song 7">07. Song 7</li>
-          <li data-src="../img/MUSIC_image/song08.mp3" data-title="Song 8">08. Song 8</li>
-          <li data-src="../img/MUSIC_image/song09.mp3" data-title="Song 9">09. Song 9</li>
-          <li data-src="../img/MUSIC_image/song10.mp3" data-title="Song 10">10. Song 10</li>
-          <li data-src="../img/MUSIC_image/song11.mp3" data-title="Song 11">11. Song 11</li>
-          <li data-src="../img/MUSIC_image/song12.mp3" data-title="Song 12">12. Song 12</li>
-          <li data-src="../img/MUSIC_image/song13.mp3" data-title="Song 13">13. Song 13</li>
-          <li data-src="../img/MUSIC_image/song14.mp3" data-title="Song 14">14. Song 14</li>
-          <li data-src="../img/MUSIC_image/song15.mp3" data-title="Song 15">15. Song 15</li>
-          <li data-src="../img/MUSIC_image/song16.mp3" data-title="Song 16">16. Song 16</li>
-          <li data-src="../img/MUSIC_image/song17.mp3" data-title="Song 17">17. Song 17</li>
-          <li data-src="../img/MUSIC_image/song18.mp3" data-title="Song 18">18. Song 18</li>
-          <li data-src="../img/MUSIC_image/song19.mp3" data-title="Song 19">19. Song 19</li>
-          <li data-src="../img/MUSIC_image/song20.mp3" data-title="Song 20">20. Song 20</li>
+          <!-- 実際に存在する音声ファイル名に合わせて src を変更してください -->
+          <li data-src="../img/MUISIC_image/AliA_かくれんぼ.m4a" data-title="AliA かくれんぼ">01. AliA かくれんぼ</li>
+          <li data-src="../img/MUISIC_image/NO BATIDÃO - ZXKAI.m4a" data-title="NO BATIDÃO - ZXKAI">02. NO BATIDÃO - ZXKAI</li>
+          <li data-src="../img/MUISIC_image/Rokudenashi.m4a" data-title="Rokudenashi">03. Rokudenashi</li>
+          <li data-src="../img/MUISIC_image/The Nights - Avicii.m4a" data-title="The Nights - Avicii">04. The Nights - Avicii</li>
+          <li data-src="../img/MUISIC_image/だれかの心臓になれたなら.m4a" data-title="だれかの心臓になれたなら">05. だれかの心臓になれたなら</li>
+          <li data-src="../img/MUISIC_image/アスノヨゾラ哨戒班.m4a" data-title="アスノヨゾラ哨戒班">06. アスノヨゾラ哨戒班</li>
+          <li data-src="../img/MUISIC_image/ジャーニー・トゥ・ファンタジースプリングス.m4a" data-title="ジャーニー・トゥ・ファンタジースプリングス">07. ジャーニー・トゥ・ファンタジースプリングス</li>
+          <li data-src="../img/MUISIC_image/君の知らない物語.m4a" data-title="君の知らない物語">08. 君の知らない物語</li>
         </ul>
       </div>
     </section>
